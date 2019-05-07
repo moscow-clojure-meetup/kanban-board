@@ -1,0 +1,26 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev"
+  "src/main"
+  "src/test"]
+
+ :nrepl
+ {:port 3333}
+
+ :dependencies
+ [[binaryage/devtools "0.9.10"]
+  [metosin/spec-tools "0.9.0"]
+  [reagent "0.8.1"]
+  [funcool/bide "1.6.0"]]
+
+ :builds
+ {:app {:target     :browser
+        :output-dir "public/js"
+        :asset-path "/js"
+
+        :modules    {:main
+                     {:entries [kanban.core]}}
+
+        :devtools   {:after-load kanban.core/mount-root
+                     :http-root  "public"
+                     :http-port  3000}}}}
