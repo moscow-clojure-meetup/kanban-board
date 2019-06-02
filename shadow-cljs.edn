@@ -1,7 +1,6 @@
 ;; shadow-cljs configuration
 {:source-paths
- ["src/dev"
-  "src/main"
+ ["src/main"
   "src/test"]
 
  :nrepl
@@ -9,9 +8,8 @@
 
  :dependencies
  [[binaryage/devtools "0.9.10"]
-  [metosin/spec-tools "0.9.0"]
-  [reagent "0.8.1"]
-  [funcool/bide "1.6.0"]]
+  [proto-repl "0.3.1"]
+  [reagent "0.8.1"]]
 
  :builds
  {:app {:target     :browser

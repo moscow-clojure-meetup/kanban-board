@@ -1,17 +1,26 @@
 (ns kanban.core
-  (:require [reagent.core :as r]
-            [reagent.interop :refer-macros [$]]))
+  (:require [reagent.core :as reagent]))
 
 
-(defn app
-  []
-  [:div "Hello app!"])
+(defn app []
+  [:section {:class "hero is-fullheight is-primary is-bold"}
+   [:div {:class "hero-body"}
+    [:div {:class "container has-text-centered"}
+     [:h1 {:class "title"}
+      "Welcome to ClojureScript course"]
+
+     [:figure {:clss "image is-128x128"}
+      [:img {:src   "/img/mclj-logo.png"
+             :class "logo"}]]
+
+     [:h2 {:class "subtitle"}
+      "by Moscow Clojure Meetup"]]]])
 
 
 (defn mount-root []
-  (r/render
+  (reagent/render
     [app]
-    ($ js/document getElementById "app")))
+    (.getElementById js/document "app")))
 
 
 (defn ^:export main []
